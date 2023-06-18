@@ -20,6 +20,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".AddStudentActivity" />
+        <activity android:name=".DatabaseHelper" />
+        <activity android:name=".ListOfStudentsActivity" />
+        <activity android:name=".Student" />
+        <activity android:name=".StudentAdapter" />
+        <activity android:name=".UpdateStudentActivity" />
     </application>
 
 </manifest>

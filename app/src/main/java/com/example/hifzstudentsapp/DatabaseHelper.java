@@ -1,6 +1,7 @@
 package com.example.hifzstudentsapp;
 
 import android.content.ContentValues;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -69,29 +70,31 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_STUDENTS);
         onCreate(db);
     }
-    public boolean addStudent(String id, String name, int age, String studentClass) {
+    public boolean addStudent( String name, int age, String studentClass) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put(COLUMN_STUDENT_ID_PRIMARY, id);
+
         values.put(COLUMN_NAME, name);
         values.put(COLUMN_AGE, age);
         values.put(COLUMN_CLASS, studentClass);
         long result = db.insert(TABLE_STUDENTS, null, values);
+        db.close();
         return result != -1;
+
     }
 
     public List<Student> getAllStudents() {
         List<Student> students = new ArrayList<>();
 
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_STUDENTS, null);
 
         if (cursor.moveToFirst()) {
             do {
-                int id = cursor.getInt(cursor.getColumnIndex(COLUMN_STUDENT_ID_PRIMARY));
-                String name = cursor.getString(cursor.getColumnIndex(COLUMN_NAME));
-                int age = cursor.getInt(cursor.getColumnIndex(COLUMN_AGE));
-                String className = cursor.getString(cursor.getColumnIndex(COLUMN_CLASS));
+                @SuppressLint("Range") int id = cursor.getInt(cursor.getColumnIndex(COLUMN_STUDENT_ID_PRIMARY));
+                @SuppressLint("Range") String name = cursor.getString(cursor.getColumnIndex(COLUMN_NAME));
+                @SuppressLint("Range") int age = cursor.getInt(cursor.getColumnIndex(COLUMN_AGE));
+                @SuppressLint("Range") String className = cursor.getString(cursor.getColumnIndex(COLUMN_CLASS));
 
                 Student student = new Student(id, name, age, className);
                 students.add(student);
@@ -100,6 +103,65 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         cursor.close();
         return students;
+    }
+    public boolean updateStudent(int studentId, String newName, int newAge, String newClass) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        values.put(COLUMN_NAME, newName);
+        values.put(COLUMN_AGE, newAge);
+        values.put(COLUMN_CLASS, newClass);
+
+        int rowsAffected = db.update(TABLE_STUDENTS, values, COLUMN_STUDENT_ID_PRIMARY + " = ?",
+                new String[]{String.valueOf(studentId)});
+        db.close();
+        return rowsAffected > 0;
+    }
+
+    public boolean deleteStudent(int studentId) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        int rowsAffected = db.delete(TABLE_STUDENTS, COLUMN_STUDENT_ID_PRIMARY + " = ?",
+                new String[]{String.valueOf(studentId)});
+
+        return rowsAffected > 0;
+    }
+    public Student getStudentById(int studentId) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        String[] projection = {
+                COLUMN_STUDENT_ID_PRIMARY,
+                COLUMN_NAME,
+                COLUMN_AGE,
+                COLUMN_CLASS
+        };
+
+        String selection = COLUMN_STUDENT_ID_PRIMARY + " = ?";
+        String[] selectionArgs = {String.valueOf(studentId)};
+
+        Cursor cursor = db.query(
+                TABLE_STUDENTS,
+                projection,
+                selection,
+                selectionArgs,
+                null,
+                null,
+                null
+        );
+
+        Student student = null;
+
+        if (cursor.moveToFirst()) {
+            @SuppressLint("Range")int id = cursor.getInt(cursor.getColumnIndex(COLUMN_STUDENT_ID_PRIMARY));
+            @SuppressLint("Range")String name = cursor.getString(cursor.getColumnIndex(COLUMN_NAME));
+            @SuppressLint("Range")int age = cursor.getInt(cursor.getColumnIndex(COLUMN_AGE));
+            @SuppressLint("Range")String className = cursor.getString(cursor.getColumnIndex(COLUMN_CLASS));
+
+            student = new Student(id, name, age, className);
+        }
+
+        cursor.close();
+        return student;
     }
 
 

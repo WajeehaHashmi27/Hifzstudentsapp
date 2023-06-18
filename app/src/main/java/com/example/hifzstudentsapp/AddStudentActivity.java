@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.content.Intent;
 
 public class AddStudentActivity extends AppCompatActivity {
 
@@ -19,7 +20,7 @@ public class AddStudentActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_student);
 
         // Initialize views
-        editTextId = findViewById(R.id.editTextId);
+
         editTextName = findViewById(R.id.editTextName);
         editTextAge = findViewById(R.id.editTextAge);
         editTextClass = findViewById(R.id.editTextClass);
@@ -32,28 +33,38 @@ public class AddStudentActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Retrieve entered student details
-                String id = editTextId.getText().toString().trim();
+
                 String name = editTextName.getText().toString().trim();
                 String ageString = editTextAge.getText().toString().trim();
-                int age = Integer.parseInt(ageString);
+                int age;
                 String studentClass = editTextClass.getText().toString().trim();
 
                 // Validate the inputs
-                if (id.isEmpty() || name.isEmpty() || ageString.isEmpty() || studentClass.isEmpty()) {
+                if ( name.isEmpty() || ageString.isEmpty() || studentClass.isEmpty()) {
                     Toast.makeText(AddStudentActivity.this, "Please enter all fields", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
+                // Parse age
+                try {
+                    age = Integer.parseInt(ageString);
+                } catch (NumberFormatException e) {
+                    Toast.makeText(AddStudentActivity.this, "Please enter a valid age", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 // Save student to the database
-                boolean success = databaseHelper.addStudent(id, name, age, studentClass);
+                boolean success = databaseHelper.addStudent( name, age, studentClass);
                 if (success) {
                     Toast.makeText(AddStudentActivity.this, "Student added successfully", Toast.LENGTH_SHORT).show();
+
                     finish(); // Finish the activity and go back to the previous screen
                 } else {
                     Toast.makeText(AddStudentActivity.this, "Failed to add student", Toast.LENGTH_SHORT).show();
                 }
             }
         });
+
     }
 }
 
