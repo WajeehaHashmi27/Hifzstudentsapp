@@ -26,6 +26,15 @@
         <activity android:name=".Student" />
         <activity android:name=".StudentAdapter" />
         <activity android:name=".UpdateStudentActivity" />
+        <activity android:name=".StudentDetailsActivity" />
+        <activity android:name=".CheckAssignTaskActivity" />
+        <activity android:name=".Task" />
+        <activity android:name=".Sabaq" />
+        <activity android:name=".Sabaqi" />
+        <activity android:name=".Manzil" />
+        <activity android:name=".PreviousHistoryActivity" />
+        <activity android:name=".AssignTask" />
+
     </application>
 
 </manifest>

@@ -22,7 +22,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String COLUMN_TASK_ID = "task_id";
     private static final String COLUMN_STUDENT_ID = "student_id";
     private static final String COLUMN_DATE = "date";
-    private static final String COLUMN_SABAQ = "sabaq";
+    private static final String COLUMN_SABAQ_PARA = "sabaq_para";
+    private static final String COLUMN_SABAQ_VERSE = "sabaq_verse";
     private static final String COLUMN_SABAQ_STATUS = "sabaq_status";
     private static final String COLUMN_SABAQI = "sabaqi";
     private static final String COLUMN_SABAQI_STATUS = "sabaqi_status";
@@ -46,7 +47,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 + COLUMN_TASK_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + COLUMN_STUDENT_ID + " INTEGER, "
                 + COLUMN_DATE + " TEXT, "
-                + COLUMN_SABAQ + " TEXT, "
+                + COLUMN_SABAQ_PARA + " TEXT, "
+                + COLUMN_SABAQ_VERSE + "TEXT,"
                 + COLUMN_SABAQ_STATUS + " TEXT, "
                 + COLUMN_SABAQI + " TEXT, "
                 + COLUMN_SABAQI_STATUS + " TEXT, "
@@ -70,6 +72,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_STUDENTS);
         onCreate(db);
     }
+
+
+
     public boolean addStudent( String name, int age, String studentClass) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();

@@ -1,0 +1,69 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/textViewStudentId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Student ID:"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textViewStudentName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Student Name:"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textViewStudentAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Student Age:"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textViewStudentClass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Student Class:"
+        android:textStyle="bold" />
+    <EditText
+        android:id="@+id/editTextSabaqPara"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Sabaq para " />
+
+    <EditText
+        android:id="@+id/editTextSabaqVerse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Sabaq verse" />
+
+    <TextView
+        android:id="@+id/textViewManzil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Manzil: "
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textViewSabaqi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sabaqi: "
+        android:textStyle="bold" />
+
+
+    <Button
+        android:id="@+id/buttonUpdateAssignTask"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Assign" />
+
+</LinearLayout>
