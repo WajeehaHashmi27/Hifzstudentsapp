@@ -32,11 +32,30 @@
         android:layout_height="wrap_content"
         android:text="Student Class:"
         android:textStyle="bold" />
+    <TextView
+        android:id="@+id/textViewSabaq"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Sabaq: "
+        android:textStyle="bold"
+        android:textSize="18sp" />
+    <TextView
+        android:id="@+id/textViewSabaqStatus1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Previous Sabaq:"
+        android:textStyle="bold" />
     <EditText
         android:id="@+id/editTextSabaqPara"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter Sabaq para " />
+    <EditText
+        android:id="@+id/editTextSabaqSurah"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Sabaq surah" />
 
     <EditText
         android:id="@+id/editTextSabaqVerse"
@@ -48,19 +67,44 @@
         android:id="@+id/textViewManzil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:text="Manzil: "
+        android:textStyle="bold"
+        android:textSize="18sp" />
+    <TextView
+        android:id="@+id/textViewManzilStatus1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Previous Manzil:"
         android:textStyle="bold" />
+    <EditText
+        android:id="@+id/editTextManzilPara"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Manzil para " />
 
     <TextView
         android:id="@+id/textViewSabaqi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:text="Sabaqi: "
+        android:textStyle="bold"
+        android:textSize="18sp" />
+    <TextView
+        android:id="@+id/textViewSabaqiStatus1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Previous Sabaqi:"
         android:textStyle="bold" />
-
+    <EditText
+        android:id="@+id/editTextSabaqiPara"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Sabai para " />
 
     <Button
-        android:id="@+id/buttonUpdateAssignTask"
+        android:id="@+id/buttonAssignTask"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
