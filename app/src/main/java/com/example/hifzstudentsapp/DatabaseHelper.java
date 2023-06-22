@@ -241,7 +241,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return -1;
         }
 
-        if (Integer.parseInt(sabaqiPara) != Integer.parseInt(sabaqiPara) - 1) {
+        if (Integer.parseInt(sabaqiPara) != Integer.parseInt(sabaqPara) - 1) {
             Toast.makeText(context, "Sabaqi para number should be one less than sabaq para number", Toast.LENGTH_SHORT).show();
             return -1;
         }

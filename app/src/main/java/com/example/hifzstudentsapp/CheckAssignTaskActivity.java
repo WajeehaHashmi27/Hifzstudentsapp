@@ -103,8 +103,8 @@ public class CheckAssignTaskActivity extends AppCompatActivity {
 
             // Set the corresponding task values to the TextView elements
             textViewSabaqTask.setText("Para: "+lastTask.getSabaqPara()+", Surah:"+lastTask.getSabaqSurah()+", Verse: "+lastTask.getSabaqVerse());
-            //textViewManzilTask.setText(lastTask.getManzilPara());
-           // textViewSabaqiTask.setText(lastTask.getSabaqiPara());
+            textViewManzilTask.setText("Para: "+lastTask.getManzilPara());
+            textViewSabaqiTask.setText("Para: "+lastTask.getSabaqiPara());
 
             buttonUpdateAssignTask.setOnClickListener(new View.OnClickListener() {
                 @Override

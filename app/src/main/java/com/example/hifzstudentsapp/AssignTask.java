@@ -119,6 +119,7 @@ public class AssignTask extends AppCompatActivity {
                 } else {
                     Toast.makeText(AssignTask.this, "Failed to assign task.", Toast.LENGTH_SHORT).show();
                 }
+                finish();
             }
         });
     }
