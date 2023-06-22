@@ -92,6 +92,7 @@ public class AssignTask extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Retrieve the values entered in the EditText fields
+                EditText editTextDate = findViewById(R.id.editTextDate);
                 EditText editTextSabaqPara = findViewById(R.id.editTextSabaqPara);
                 EditText editTextSabaqSurah = findViewById(R.id.editTextSabaqSurah);
                 EditText editTextSabaqVerse = findViewById(R.id.editTextSabaqVerse);
@@ -103,6 +104,7 @@ public class AssignTask extends AppCompatActivity {
                 String sabaqVerse = editTextSabaqVerse.getText().toString();
                 String manzilParaNumber = editTextManzilPara.getText().toString();
                 String sabaqiParaNumber = editTextSabaqiPara.getText().toString();
+                String date = editTextDate.getText().toString();
 
                 // Update the task values in the database
                 Task task = new Task();
@@ -112,6 +114,7 @@ public class AssignTask extends AppCompatActivity {
                 task.setSabaqVerse(sabaqVerse);
                 task.setManzilPara(manzilParaNumber);
                 task.setSabaqiPara(sabaqiParaNumber);
+                task.setDate(date);
 
                 long taskId = databaseHelper.insertTask(AssignTask.this,task);
                 if (taskId != -1) {

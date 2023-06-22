@@ -29,11 +29,9 @@
         <activity android:name=".StudentDetailsActivity" />
         <activity android:name=".CheckAssignTaskActivity" />
         <activity android:name=".Task" />
-        <activity android:name=".Sabaq" />
-        <activity android:name=".Sabaqi" />
-        <activity android:name=".Manzil" />
         <activity android:name=".PreviousHistoryActivity" />
         <activity android:name=".AssignTask" />
+        <activity android:name=".TaskAdapter" />
 
     </application>
 

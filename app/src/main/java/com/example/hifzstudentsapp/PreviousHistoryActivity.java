@@ -11,6 +11,11 @@ import android.widget.Toast;
 import android.content.Intent;
 import android.widget.TextView;
 import android.widget.RadioButton;
+import java.util.List;
+import java.util.ArrayList;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 public class PreviousHistoryActivity extends AppCompatActivity {
 
@@ -19,6 +24,11 @@ public class PreviousHistoryActivity extends AppCompatActivity {
     private int studentId;
     private String studentName;
     private DatabaseHelper databaseHelper;
+    private RecyclerView recyclerView;
+    private TaskAdapter taskAdapter;
+    private List<Task> taskList;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +40,7 @@ public class PreviousHistoryActivity extends AppCompatActivity {
         studentName = getIntent().getStringExtra("studentName");
 
         // Set the title of the activity as the student's name
-        setTitle(studentName);
+        //setTitle(studentName);
         databaseHelper = new DatabaseHelper(this);
         // Initialize views
         textViewStudentId = findViewById(R.id.textViewStudentId);
@@ -47,6 +57,16 @@ public class PreviousHistoryActivity extends AppCompatActivity {
             textViewStudentAge.setText("Age: "+String.valueOf(student.getAge()));
             textViewStudentClass.setText("Class: "+student.getClassName());
         }
+
+        recyclerView = findViewById(R.id.recyclerViewTasks);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        taskList = new ArrayList<>();
+        taskAdapter = new TaskAdapter(taskList);
+        recyclerView.setAdapter(taskAdapter);
+
+        // Retrieve the tasks for the student from the database
+        taskList.addAll(databaseHelper.getTasksForStudent(studentId));
+        taskAdapter.notifyDataSetChanged();
 
     }
 }

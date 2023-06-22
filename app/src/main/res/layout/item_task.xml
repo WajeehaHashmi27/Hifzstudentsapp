@@ -1,41 +1,37 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="16dp">
 
     <TextView
-        android:id="@+id/textViewStudentId"
+        android:id="@+id/textViewDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Student ID:"
+        android:text="Date:"
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/textViewStudentName"
+        android:id="@+id/textViewSabaqPara"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Student Name:"
+        android:text="Sabaq Para:"
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/textViewStudentAge"
+        android:id="@+id/textViewSabaqSurah"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Student Age:"
+        android:text="Sabaq Surah:"
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/textViewStudentClass"
+        android:id="@+id/textViewSabaqVerse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Student Class:"
+        android:text="Sabaq Verse:"
         android:textStyle="bold" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewTasks"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+    <!-- Add other TextViews for the remaining columns -->
 
 </LinearLayout>

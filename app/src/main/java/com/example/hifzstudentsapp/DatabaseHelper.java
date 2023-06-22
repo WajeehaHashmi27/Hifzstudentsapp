@@ -252,12 +252,75 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(COLUMN_SABAQ_VERSE, task.getSabaqVerse());
         values.put(COLUMN_MANZIL_PARA, task.getManzilPara());
         values.put(COLUMN_SABAQI_PARA, task.getSabaqiPara());
+        values.put(COLUMN_DATE,task.getDate());
 
         long taskId = db.insert("tasks", null, values);
         db.close();
 
         return taskId;
     }
+
+    public List<Task> getTasksForStudent(int studentId) {
+        List<Task> taskList = new ArrayList<>();
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        String selectQuery = "SELECT * FROM " + TABLE_TASKS + " WHERE " + COLUMN_STUDENT_ID + " = ?";
+        String[] selectionArgs = {String.valueOf(studentId)};
+
+        Cursor cursor = db.rawQuery(selectQuery, selectionArgs);
+
+        if (cursor.moveToFirst()) {
+            do {
+                Task task = new Task();
+
+                @SuppressLint("Range") int taskIdValue = cursor.getInt(cursor.getColumnIndex(COLUMN_TASK_ID));
+                task.setTaskId(taskIdValue);
+
+                @SuppressLint("Range") String dateValue = cursor.getString(cursor.getColumnIndex(COLUMN_DATE));
+                task.setDate(dateValue);
+
+                @SuppressLint("Range") String sabaqParaValue = cursor.getString(cursor.getColumnIndex(COLUMN_SABAQ_PARA));
+                task.setSabaqPara(sabaqParaValue);
+
+                @SuppressLint("Range") String sabaqSurahValue = cursor.getString(cursor.getColumnIndex(COLUMN_SABAQ_SURAH));
+                task.setSabaqSurah(sabaqSurahValue);
+
+                @SuppressLint("Range") String sabaqVerseValue = cursor.getString(cursor.getColumnIndex(COLUMN_SABAQ_VERSE));
+                task.setSabaqVerse(sabaqVerseValue);
+
+                @SuppressLint("Range")
+                String paraStatusValue = cursor.getString(cursor.getColumnIndex(COLUMN_SABAQ_STATUS));
+                boolean paraStatus = Boolean.parseBoolean(paraStatusValue);
+                task.setSabaqStatus(paraStatus);
+
+
+                @SuppressLint("Range") String manzilParaValue = cursor.getString(cursor.getColumnIndex(COLUMN_MANZIL_PARA));
+                task.setManzilPara(manzilParaValue);
+
+                @SuppressLint("Range")
+                String manzilStatusValue = cursor.getString(cursor.getColumnIndex(COLUMN_MANZIL_STATUS));
+                boolean manzilStatus = Boolean.parseBoolean(manzilStatusValue);
+                task.setManzilStatus(manzilStatus);
+
+                @SuppressLint("Range") String sabaqiParaValue = cursor.getString(cursor.getColumnIndex(COLUMN_SABAQI_PARA));
+                task.setSabaqiPara(sabaqiParaValue);
+
+                @SuppressLint("Range")
+                String sabaqiStatusValue = cursor.getString(cursor.getColumnIndex(COLUMN_SABAQI_STATUS));
+                boolean sabaqiStatus = Boolean.parseBoolean(sabaqiStatusValue);
+                task.setSabaqiStatus(sabaqiStatus);
+
+                taskList.add(task);
+            } while (cursor.moveToNext());
+        }
+
+
+        cursor.close();
+        db.close();
+
+        return taskList;
+    }
+
 
 
 

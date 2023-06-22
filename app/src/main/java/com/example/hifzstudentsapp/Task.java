@@ -53,6 +53,9 @@ public int getStudentId(){return studentId;}
     public String getSabaqVerse() {
         return sabaqVerse;
     }
+    public String getDate() {
+        return date;
+    }
 
 
     public boolean getSabaqStatus() {
@@ -104,6 +107,10 @@ public int getStudentId(){return studentId;}
     public void setSabaqiPara(String sabaqiPara) {
         this.sabaqiPara = sabaqiPara;
     }
+    public void setDate(String date) {
+        this.date = date;
+    }
+    public void setTaskId(int taskId){this.taskId=taskId;}
 
     // Other methods and getter/setter for remaining attributes
 }
