@@ -1,5 +1,6 @@
 package com.example.hifzstudentsapp;
 
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.content.Intent;
 
@@ -24,7 +25,7 @@ public class ListOfStudentsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_of_students);
-
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.teal_700)));
         recyclerViewStudents = findViewById(R.id.recyclerViewStudents);
         recyclerViewStudents.setLayoutManager(new LinearLayoutManager(this));
 

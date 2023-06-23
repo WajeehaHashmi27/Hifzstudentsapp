@@ -10,68 +10,89 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Student ID:"
-        android:textStyle="bold" />
+
+        android:textColor="@android:color/black"
+        android:textSize="20sp"/>
 
     <TextView
         android:id="@+id/textViewStudentName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Student Name:"
-        android:textStyle="bold" />
+
+        android:textColor="@android:color/black"
+        android:textSize="20sp"/>
 
     <TextView
         android:id="@+id/textViewStudentAge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Student Age:"
-        android:textStyle="bold" />
+
+        android:textColor="@android:color/black"
+        android:textSize="20sp"/>
 
     <TextView
         android:id="@+id/textViewStudentClass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Student Class:"
-        android:textStyle="bold" />
+
+        android:textColor="@android:color/black"
+        android:textSize="20sp"/>
     <TextView
         android:id="@+id/textViewDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Date:"
-        android:textStyle="bold" />
+
+        android:textColor="@android:color/black"
+        android:textSize="20sp"/>
 
     <TextView
         android:id="@+id/textViewSabaqHeading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Sabaq"
+        android:text="Sabaq:"
         android:textStyle="bold"
-        android:textSize="18sp" />
+        android:textSize="20sp"
+        android:textColor="@android:color/black"/>
 
     <TextView
         android:id="@+id/textViewSabaqTask"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="No assigned task yet" />
+        android:text="No assigned task yet"
+        android:textColor="@android:color/black"
+        android:layout_marginBottom="5dp"
+        android:textSize="17sp"
+        />
     <RadioGroup
         android:id="@+id/radioGroupSabaq"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="0dp">
+        android:layout_marginTop="0dp"
+        android:layout_marginLeft="10dp"
+        >
 
         <RadioButton
             android:id="@+id/radioButtonSabaqYes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Yes" />
+            android:text="Yes"
+            android:textSize="16sp"
+            style="@style/GreenRadioButtonStyle"/>
 
         <RadioButton
             android:id="@+id/radioButtonSabaqNo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="No" />
+            android:text="No"
+            android:textSize="16sp"
+            style="@style/RedRadioButtonStyle" />
     </RadioGroup>
 
     <TextView
@@ -79,35 +100,45 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Manzil"
+        android:text="Manzil:"
         android:textStyle="bold"
-        android:textSize="18sp" />
+        android:textSize="20sp"
+        android:textColor="@android:color/black"
+        />
 
     <TextView
         android:id="@+id/textViewManzilTask"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="No assigned task yet" />
+        android:text="No assigned task yet"
+        android:textColor="@android:color/black"
+        android:layout_marginBottom="5dp"
+        android:textSize="17sp"/>
 
     <RadioGroup
         android:id="@+id/radioGroupManzil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="0dp">
+        android:layout_marginTop="0dp"
+        android:layout_marginLeft="10dp">
 
         <RadioButton
             android:id="@+id/radioButtonManzilYes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="16sp"
+            style="@style/GreenRadioButtonStyle"
             android:text="Yes" />
 
         <RadioButton
             android:id="@+id/radioButtonManzilNo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="No" />
+            android:text="No"
+            android:textSize="16sp"
+            style="@style/RedRadioButtonStyle" />
     </RadioGroup>
 
     <TextView
@@ -117,44 +148,51 @@
         android:layout_marginTop="16dp"
         android:text="Sabaqi"
         android:textStyle="bold"
-        android:textSize="18sp" />
+        android:textSize="20sp"
+        android:textColor="@android:color/black"/>
 
     <TextView
         android:id="@+id/textViewSabaqiTask"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="No assigned task yet" />
-
-
-
-
+        android:text="No assigned task yet"
+        android:textColor="@android:color/black"
+        android:layout_marginBottom="5dp"
+        android:textSize="17sp"/>
 
     <RadioGroup
         android:id="@+id/radioGroupSabaqi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="8dp">
+
+        android:layout_marginLeft="10dp">
 
         <RadioButton
             android:id="@+id/radioButtonSabaqiYes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Yes" />
+            android:text="Yes"
+            android:textSize="16sp"
+            style="@style/GreenRadioButtonStyle"/>
 
         <RadioButton
             android:id="@+id/radioButtonSabaqiNo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="No" />
+            android:text="No"
+            android:textSize="16sp"
+            style="@style/RedRadioButtonStyle" />
     </RadioGroup>
 
     <Button
+        android:layout_margin="50dp"
         android:id="@+id/buttonUpdateAssignTask"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:background="@color/button_background_color"
+        android:textColor="@color/button_text_color"
         android:text="Update Status and Assign New Task" />
 
 </LinearLayout>

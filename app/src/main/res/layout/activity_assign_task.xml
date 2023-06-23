@@ -10,28 +10,36 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Student ID:"
-        android:textStyle="bold" />
+
+        android:textColor="@android:color/black"
+        android:textSize="20sp"/>
 
     <TextView
         android:id="@+id/textViewStudentName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Student Name:"
-        android:textStyle="bold" />
+
+        android:textColor="@android:color/black"
+        android:textSize="20sp"/>
 
     <TextView
         android:id="@+id/textViewStudentAge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Student Age:"
-        android:textStyle="bold" />
+
+        android:textColor="@android:color/black"
+        android:textSize="20sp"/>
 
     <TextView
         android:id="@+id/textViewStudentClass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Student Class:"
-        android:textStyle="bold" />
+
+        android:textColor="@android:color/black"
+        android:textSize="20sp"/>
 
     <EditText
         android:id="@+id/editTextDate"
@@ -43,15 +51,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Sabaq: "
+        android:text="Sabaq:"
         android:textStyle="bold"
-        android:textSize="18sp" />
+        android:textSize="20sp"
+        android:textColor="@android:color/black"/>
     <TextView
         android:id="@+id/textViewSabaqStatus1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Previous Sabaq:"
-        android:textStyle="bold" />
+        android:layout_marginTop="8dp"
+        android:textColor="@android:color/black"
+        android:layout_marginBottom="5dp"
+        android:textSize="17sp" />
     <EditText
         android:id="@+id/editTextSabaqPara"
         android:layout_width="match_parent"
@@ -74,15 +86,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Manzil: "
+        android:text="Manzil:"
         android:textStyle="bold"
-        android:textSize="18sp" />
+        android:textSize="20sp"
+        android:textColor="@android:color/black"/>
     <TextView
         android:id="@+id/textViewManzilStatus1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:text="Previous Manzil:"
-        android:textStyle="bold" />
+        android:textColor="@android:color/black"
+        android:layout_marginBottom="5dp"
+        android:textSize="17sp" />
     <EditText
         android:id="@+id/editTextManzilPara"
         android:layout_width="match_parent"
@@ -94,15 +110,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Sabaqi: "
+        android:text="Sabaqi:"
         android:textStyle="bold"
-        android:textSize="18sp" />
+        android:textSize="20sp"
+        android:textColor="@android:color/black" />
     <TextView
         android:id="@+id/textViewSabaqiStatus1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:text="Previous Sabaqi:"
-        android:textStyle="bold" />
+        android:textColor="@android:color/black"
+        android:layout_marginBottom="5dp"
+        android:textSize="17sp" />
     <EditText
         android:id="@+id/editTextSabaqiPara"
         android:layout_width="match_parent"
@@ -111,9 +131,13 @@
 
     <Button
         android:id="@+id/buttonAssignTask"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Assign" />
+        android:background="@color/button_background_color"
+        android:textColor="@color/button_text_color"
+        android:text="Assign"
+        android:layout_marginLeft="45dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="20dp"/>
 
 </LinearLayout>

@@ -1,6 +1,8 @@
 package com.example.hifzstudentsapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -19,7 +21,7 @@ public class StudentDetailsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_details);
-
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.teal_700)));
         buttonCheckAssignTask = findViewById(R.id.buttonCheckAssignTask);
         buttonSeePreviousHistory = findViewById(R.id.buttonSeePreviousHistory);
 

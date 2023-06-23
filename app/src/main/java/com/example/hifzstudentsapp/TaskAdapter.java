@@ -35,10 +35,10 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
         Task task = taskList.get(position);
 
         // Set the values for the views in the item_task layout
-        holder.textViewDate.setText(task.getDate());
-        holder.textViewSabaqPara.setText(task.getSabaqPara());
-        holder.textViewSabaqSurah.setText(task.getSabaqSurah());
-        holder.textViewSabaqVerse.setText(task.getSabaqVerse());
+        holder.textViewDate.setText("Date: "+task.getDate());
+        holder.textViewSabaqPara.setText("Sabaq: "+task.getSabaqPara()+"(Para), "+task.getSabaqSurah()+"(Surah), "+task.getSabaqVerse()+"(Verse)");
+        holder.textViewSabaqSurah.setText("Manzil: "+task.getManzilPara()+"(Para)");
+        holder.textViewSabaqVerse.setText("Sabaqi: "+task.getSabaqiPara()+"(Para)");
         // Set other views here
 
         // Add any click listeners or other functionality here

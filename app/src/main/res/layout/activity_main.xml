@@ -8,14 +8,19 @@
 
     <Button
         android:id="@+id/btnAddNewStudent"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:text="Add New Student" />
+        android:text="Add New Student"
+        android:background="@color/button_background_color"
+        android:textColor="@color/button_text_color"
+        android:layout_marginBottom="30dp" />
 
     <Button
         android:id="@+id/btnSeeListOfStudents"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:text="See List of Students" />
+        android:text="See List of Students"
+        android:background="@color/button_background_color"
+        android:textColor="@color/button_text_color"/>
 
 </LinearLayout>

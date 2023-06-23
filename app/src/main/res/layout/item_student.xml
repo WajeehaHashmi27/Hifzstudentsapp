@@ -5,7 +5,7 @@
 
     <TextView
         android:id="@+id/textViewId"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@android:color/black"
@@ -13,10 +13,11 @@
 
     <TextView
         android:id="@+id/textViewName"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/textViewId"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:paddingLeft="8dp"
+        android:layout_toRightOf="@id/textViewId"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@android:color/black" />
 
     <LinearLayout
@@ -27,17 +28,21 @@
 
         <Button
             android:id="@+id/buttonUpdate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
+            android:layout_width="70dp"
+            android:layout_height="35dp"
+
             android:layout_marginRight="10dp"
+            android:background="@color/button_background_color"
+            android:textColor="@color/button_text_color"
             android:text="Update" />
 
         <Button
             android:id="@+id/buttonDelete"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
+            android:layout_width="70dp"
+            android:layout_height="35dp"
+
+            android:background="@color/button_background_color"
+            android:textColor="@color/button_text_color"
             android:text="Delete" />
     </LinearLayout>
 

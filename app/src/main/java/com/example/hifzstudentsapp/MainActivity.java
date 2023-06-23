@@ -1,7 +1,9 @@
 package com.example.hifzstudentsapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
 import android.content.Intent;
@@ -19,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.teal_700)));
         btnAddNewStudent = findViewById(R.id.btnAddNewStudent);
         btnSeeListOfStudents = findViewById(R.id.btnSeeListOfStudents);
 

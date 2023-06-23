@@ -5,31 +5,62 @@
     android:orientation="vertical">
 
     <!-- Input fields for student details -->
-
+    <TextView
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="150dp"
+        android:id="@+id/textViewName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:text="Name: "
+        android:textStyle="bold"
+        android:textSize="18sp" />
 
     <EditText
+        android:layout_marginLeft="50dp"
         android:id="@+id/editTextName"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:hint="Name" />
-
+        android:hint="Enter name" />
+    <TextView
+        android:layout_marginLeft="8dp"
+        android:id="@+id/textViewAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+android:textColor="#000000"
+        android:text="Age: "
+        android:textStyle="bold"
+        android:textSize="18sp" />
     <EditText
+        android:layout_marginLeft="50dp"
         android:id="@+id/editTextAge"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:hint="Age" />
-
+        android:hint="Enter age" />
+    <TextView
+        android:layout_marginLeft="8dp"
+        android:id="@+id/textViewclass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:text="Class: "
+        android:textStyle="bold"
+        android:textSize="18sp" />
     <EditText
+        android:layout_marginLeft="50dp"
         android:id="@+id/editTextClass"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:hint="Class" />
+        android:hint="Enter class" />
 
     <!-- Button to add the student -->
     <Button
+        android:layout_margin="50dp"
         android:id="@+id/buttonAdd"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:background="@color/button_background_color"
+        android:textColor="@color/button_text_color"
         android:text="Add Student" />
 
 </LinearLayout>

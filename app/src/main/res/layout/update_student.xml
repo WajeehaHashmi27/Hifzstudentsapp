@@ -1,50 +1,64 @@
 <!-- update.xml -->
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
-
+    android:orientation="vertical">
     <TextView
-        android:id="@+id/textViewTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Update Student"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:padding="16dp" />
-
-    <EditText
-        android:id="@+id/editTextName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textViewTitle"
-        android:hint="Name"
-        android:inputType="text"/>
-
-    <EditText
-        android:id="@+id/editTextAge"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/editTextName"
-        android:hint="Age"
-        android:inputType="number"/>
-
-    <EditText
-        android:id="@+id/editTextClass"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/editTextAge"
-        android:hint="Class"
-        android:inputType="text"/>
-
-    <Button
-        android:id="@+id/buttonUpdate"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="150dp"
+        android:id="@+id/textViewName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/editTextClass"
-        android:layout_centerHorizontal="true"
-        android:text="Update"/>
+        android:textColor="#000000"
+        android:text="Name: "
+        android:textStyle="bold"
+        android:textSize="18sp" />
 
-</RelativeLayout>
+    <EditText
+        android:layout_marginLeft="50dp"
+        android:id="@+id/editTextName"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="Enter name" />
+    <TextView
+        android:layout_marginLeft="8dp"
+        android:id="@+id/textViewAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:text="Age: "
+        android:textStyle="bold"
+        android:textSize="18sp" />
+    <EditText
+        android:layout_marginLeft="50dp"
+        android:id="@+id/editTextAge"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="Enter age" />
+    <TextView
+        android:layout_marginLeft="8dp"
+        android:id="@+id/textViewclass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:text="Class: "
+        android:textStyle="bold"
+        android:textSize="18sp" />
+    <EditText
+        android:layout_marginLeft="50dp"
+        android:id="@+id/editTextClass"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="Enter class" />
+
+    <Button
+        android:layout_margin="50dp"
+        android:id="@+id/buttonUpdate"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:background="@color/button_background_color"
+        android:textColor="@color/button_text_color"
+        android:text="Update Student" />
+
+</LinearLayout>

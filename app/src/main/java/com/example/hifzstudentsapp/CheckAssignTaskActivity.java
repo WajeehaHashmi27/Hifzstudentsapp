@@ -3,6 +3,8 @@ package com.example.hifzstudentsapp;
 
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -35,7 +37,7 @@ public class CheckAssignTaskActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_check_assign_task);
-
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.teal_700)));
         // Retrieve the studentId and studentName from the intent
         studentId = getIntent().getIntExtra("studentId", -1);
         studentName = getIntent().getStringExtra("studentName");
@@ -103,7 +105,7 @@ public class CheckAssignTaskActivity extends AppCompatActivity {
 
             // Set the corresponding task values to the TextView elements
             textViewDate.setText("Date: "+lastTask.getDate());
-            textViewSabaqTask.setText("Para: "+lastTask.getSabaqPara()+", Surah:"+lastTask.getSabaqSurah()+", Verse: "+lastTask.getSabaqVerse());
+            textViewSabaqTask.setText("Para: "+lastTask.getSabaqPara()+", Surah: "+lastTask.getSabaqSurah()+", Verse: "+lastTask.getSabaqVerse());
             textViewManzilTask.setText("Para: "+lastTask.getManzilPara());
             textViewSabaqiTask.setText("Para: "+lastTask.getSabaqiPara());
 
