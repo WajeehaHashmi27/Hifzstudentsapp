@@ -10,28 +10,37 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Student ID:"
-        android:textStyle="bold" />
+
+        android:textColor="@android:color/black"
+        android:textSize="20sp"/>
 
     <TextView
         android:id="@+id/textViewStudentName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Student Name:"
-        android:textStyle="bold" />
+
+        android:textColor="@android:color/black"
+        android:textSize="20sp"/>
 
     <TextView
         android:id="@+id/textViewStudentAge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Student Age:"
-        android:textStyle="bold" />
+
+        android:textColor="@android:color/black"
+        android:textSize="20sp"/>
 
     <TextView
         android:id="@+id/textViewStudentClass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Student Class:"
-        android:textStyle="bold" />
+
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:layout_marginBottom="15dp"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewTasks"
